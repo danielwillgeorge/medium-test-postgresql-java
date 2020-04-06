@@ -16,7 +16,6 @@ public class Main {
         } catch (Exception e) {
             System.out.println(e);
         }
-
     }
 
     public static void testInsert() throws Exception {
