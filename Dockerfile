@@ -7,7 +7,6 @@ RUN apt-get update && \
 
 COPY src /src
 COPY pom.xml /pom.xml
-COPY target /target
 
 RUN mvn install -U
 
@@ -18,7 +17,6 @@ RUN pg_tmp=$(find /src -maxdepth 2 -type d -name '*ephemeralpg*') && echo $pg_tm
 
 RUN chown -R postgres:postgres /src
 RUN chmod 777 /src
-RUN chmod 777 /target
 
 # Switch USER to non-root to run BasicTest
 USER postgres
